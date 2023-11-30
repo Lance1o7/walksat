@@ -110,9 +110,12 @@ static inline int MAX(int x, int y)
 
 int WalkSAT::main()
 {
-    seed = 0;
+    //seed = 0;
+    // initialize random seed */
     parse_parameters();
     srandom(seed);
+    srand (time(NULL));
+    seed = rand();
     print_parameters();
     initprob();
     initialize_statistics();
